@@ -151,34 +151,4 @@ public class KakaoService {
         return kakaoUser;
     }
 
-//    @Transactional
-//    public User registerKakaoUserIfNeeded(KakaoUserInfoDto kakaoUserInfoDto) {
-//        log.info("registerKakaoUserIfNeeded 메서드 시작") ;
-//        // DB에 중복된 Kakao Id 가 있는지 확인
-//        Long kakaoId = kakaoUserInfoDto.getId();
-//        User kakaoUser = userRepository.findByKakaoId(kakaoId).orElse(null);
-//
-//        if (kakaoUser == null) {
-//            // 카카오 사용자 email 동일한 email 가진 회원이 있는지 확인
-//            User sameEmailUser = userRepository.findByEmail(kakaoUserInfoDto.getEmail()).orElse(null);
-//            if (sameEmailUser != null) {
-//                // 기존 회원 정보에 카카오 id 추가
-//                return sameEmailUser.kakaoIdUpdate(kakaoId);
-//
-//            }else {
-//                // 신규 회원가입
-//                // password : random UUID
-//                String password = UUID.randomUUID().toString();
-//                String encodedPassword = passwordEncoder.encode(password);
-//
-//                // email: kakao email
-//                String email = kakaoUserInfoDto.getEmail();
-//
-//                kakaoUser = new User(kakaoUserInfoDto.getNickname(), encodedPassword, email, UserRoleEnum.USER, kakaoId);
-//                return userRepository.save(kakaoUser);
-//            }
-//        }
-//
-//        return kakaoUser;
-//    }
 }
